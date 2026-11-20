@@ -142,7 +142,7 @@
 
   nav.forEach(function (item) {
     var box = { x: item.x, y: header.y, w: item.w, h: header.h };
-    if (!menus[item.key]) {
+    if (item.key !== "concerns" && !menus[item.key]) {
       addLink("hot", box, item.href, item.label);
       return;
     }
@@ -161,7 +161,6 @@
       panel.className = "panel mega";
       panel.style.left = (-item.x / item.w) * 100 + "%";
       panel.style.width = (W / item.w) * 100 + "%";
-      panel.style.height = (600 / header.h) * 100 + "%";
       var shot = document.createElement("img");
       shot.src = "Big%20Menu%20-%20Concerns.jpg";
       shot.alt = "";
